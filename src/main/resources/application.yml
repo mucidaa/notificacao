@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: 'notificacao'
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${GMAIL_MAIL}
+    password: ${GMAIL_KEY}
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+            fallback: false
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+
+  thymeleaf:
+    enabled: true
+
+email:
+  sender: '${GMAIL_MAIL}'
+  name: 'Alvaro Mucida'
+
+server:
+  port: 8082
+
