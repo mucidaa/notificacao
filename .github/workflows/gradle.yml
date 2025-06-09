@@ -34,7 +34,12 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
+        
+
       - name: Build with Gradle
+        env:
+          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
+          GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
         run: ./gradlew build
 
       #- name: Run tests
